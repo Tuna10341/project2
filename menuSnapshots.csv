@@ -1,0 +1,7 @@
+_id,menu_date,fetched_at,location_name,campus,meal_period,item_name,category,calories,serving_unit
+snapshot_001,2026-03-30,2026-03-30T08:00:00Z,Stetson East,Boston,Lunch,Grilled Chicken Bowl,Entree,520,bowl
+snapshot_001,2026-03-30,2026-03-30T08:00:00Z,Stetson East,Boston,Lunch,Caesar Salad,Salad,280,plate
+snapshot_001,2026-03-30,2026-03-30T08:00:00Z,Stetson East,Boston,Lunch,Veggie Pasta,Vegetarian,430,bowl
+snapshot_002,2026-03-30,2026-03-30T17:00:00Z,International Village,Boston,Dinner,Beef Stir Fry,Entree,610,plate
+snapshot_002,2026-03-30,2026-03-30T17:00:00Z,International Village,Boston,Dinner,Brown Rice,Side,210,cup
+snapshot_002,2026-03-30,2026-03-30T17:00:00Z,International Village,Boston,Dinner,Fruit Cup,Dessert,120,cup

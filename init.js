@@ -185,7 +185,7 @@ db.menuSnapshots.insertMany([
 db.users.insertMany([
   {
     _id: "user_001",
-    email: "tuna@example.edu",
+    email: "tuna.t@northeastern.edu",
     display_name: "Tuna",
     created_at: ISODate("2026-03-25T10:00:00Z"),
     dietary_goals: [
@@ -262,7 +262,7 @@ db.users.insertMany([
   },
   {
     _id: "user_002",
-    email: "alex@example.edu",
+    email: "alex.a@northeastern.edu",
     display_name: "Alex",
     created_at: ISODate("2026-03-26T09:00:00Z"),
     dietary_goals: [

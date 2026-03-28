@@ -1,0 +1,178 @@
+[
+  {
+    "_id": "snapshot_001",
+    "menu_date": { "$date": "2026-03-30T00:00:00Z" },
+    "fetched_at": { "$date": "2026-03-30T08:00:00Z" },
+    "source_reference": "DOC_001",
+    "is_complete": true,
+    "dining_location": {
+      "location_id": "loc_001",
+      "name": "Stetson East",
+      "campus": "Boston",
+      "is_active": true
+    },
+    "meal_period": {
+      "meal_period_id": "mp_001",
+      "name": "Lunch",
+      "start_time": "11:00",
+      "end_time": "15:00"
+    },
+    "source_system": {
+      "source_system_id": "src_001",
+      "name": "DineOnCampus"
+    },
+    "items": [
+      {
+        "menu_item_id": "item_001",
+        "name": "Grilled Chicken Bowl",
+        "category": {
+          "category_id": "cat_001",
+          "category_name": "Entree"
+        },
+        "allergen_tags": ["soy"],
+        "station": {
+          "station_id": "st_001",
+          "station_name": "Main Line"
+        },
+        "display_portion": "1 bowl",
+        "nutrition": {
+          "nutrition_version_id": "nut_001",
+          "calories": 520,
+          "serving_size_value": 1,
+          "serving_unit": "bowl",
+          "recorded_at": { "$date": "2026-03-30T08:00:00Z" }
+        }
+      },
+      {
+        "menu_item_id": "item_002",
+        "name": "Caesar Salad",
+        "category": {
+          "category_id": "cat_002",
+          "category_name": "Salad"
+        },
+        "allergen_tags": ["milk"],
+        "station": {
+          "station_id": "st_002",
+          "station_name": "Salad Bar"
+        },
+        "display_portion": "1 plate",
+        "nutrition": {
+          "nutrition_version_id": "nut_002",
+          "calories": 280,
+          "serving_size_value": 1,
+          "serving_unit": "plate",
+          "recorded_at": { "$date": "2026-03-30T08:00:00Z" }
+        }
+      },
+      {
+        "menu_item_id": "item_003",
+        "name": "Veggie Pasta",
+        "category": {
+          "category_id": "cat_003",
+          "category_name": "Vegetarian"
+        },
+        "allergen_tags": ["wheat"],
+        "station": {
+          "station_id": "st_001",
+          "station_name": "Main Line"
+        },
+        "display_portion": "1 bowl",
+        "nutrition": {
+          "nutrition_version_id": "nut_003",
+          "calories": 430,
+          "serving_size_value": 1,
+          "serving_unit": "bowl",
+          "recorded_at": { "$date": "2026-03-30T08:00:00Z" }
+        }
+      }
+    ]
+  },
+  {
+    "_id": "snapshot_002",
+    "menu_date": { "$date": "2026-03-30T00:00:00Z" },
+    "fetched_at": { "$date": "2026-03-30T17:00:00Z" },
+    "source_reference": "DOC_002",
+    "is_complete": true,
+    "dining_location": {
+      "location_id": "loc_002",
+      "name": "International Village",
+      "campus": "Boston",
+      "is_active": true
+    },
+    "meal_period": {
+      "meal_period_id": "mp_002",
+      "name": "Dinner",
+      "start_time": "17:00",
+      "end_time": "21:00"
+    },
+    "source_system": {
+      "source_system_id": "src_001",
+      "name": "DineOnCampus"
+    },
+    "items": [
+      {
+        "menu_item_id": "item_004",
+        "name": "Beef Stir Fry",
+        "category": {
+          "category_id": "cat_001",
+          "category_name": "Entree"
+        },
+        "allergen_tags": ["soy"],
+        "station": {
+          "station_id": "st_003",
+          "station_name": "Global Kitchen"
+        },
+        "display_portion": "1 plate",
+        "nutrition": {
+          "nutrition_version_id": "nut_004",
+          "calories": 610,
+          "serving_size_value": 1,
+          "serving_unit": "plate",
+          "recorded_at": { "$date": "2026-03-30T17:00:00Z" }
+        }
+      },
+      {
+        "menu_item_id": "item_005",
+        "name": "Brown Rice",
+        "category": {
+          "category_id": "cat_004",
+          "category_name": "Side"
+        },
+        "allergen_tags": [],
+        "station": {
+          "station_id": "st_003",
+          "station_name": "Global Kitchen"
+        },
+        "display_portion": "1 cup",
+        "nutrition": {
+          "nutrition_version_id": "nut_005",
+          "calories": 210,
+          "serving_size_value": 1,
+          "serving_unit": "cup",
+          "recorded_at": { "$date": "2026-03-30T17:00:00Z" }
+        }
+      },
+      {
+        "menu_item_id": "item_006",
+        "name": "Fruit Cup",
+        "category": {
+          "category_id": "cat_005",
+          "category_name": "Dessert"
+        },
+        "allergen_tags": [],
+        "station": {
+          "station_id": "st_004",
+          "station_name": "Dessert"
+        },
+        "display_portion": "1 cup",
+        "nutrition": {
+          "nutrition_version_id": "nut_006",
+          "calories": 120,
+          "serving_size_value": 1,
+          "serving_unit": "cup",
+          "recorded_at": { "$date": "2026-03-30T17:00:00Z" }
+        }
+      }
+    ]
+  }
+]

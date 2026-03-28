@@ -1,0 +1,138 @@
+[
+  {
+    "_id": "user_001",
+    "email": "tuna.t@northeastern.edu",
+    "display_name": "Tuna",
+    "created_at": { "$date": "2026-03-25T10:00:00Z" },
+    "dietary_goals": [
+      {
+        "goal_id": "goal_001",
+        "goal_type": "Calories",
+        "target_value": 2200,
+        "unit": "kcal",
+        "start_date": { "$date": "2026-03-25T00:00:00Z" },
+        "end_date": { "$date": "2026-04-25T00:00:00Z" }
+      }
+    ],
+    "filter_presets": [
+      {
+        "filter_id": "filter_001",
+        "name": "Low Calorie",
+        "min_calories": 0,
+        "max_calories": 400,
+        "max_serving_size": 1,
+        "enabled": true,
+        "created_at": { "$date": "2026-03-25T10:10:00Z" }
+      },
+      {
+        "filter_id": "filter_002",
+        "name": "High Protein",
+        "min_calories": 300,
+        "max_calories": 700,
+        "max_serving_size": 1,
+        "enabled": false,
+        "created_at": { "$date": "2026-03-25T10:15:00Z" }
+      }
+    ],
+    "meal_plans": [
+      {
+        "meal_plan_id": "plan_001",
+        "plan_date": { "$date": "2026-03-30T00:00:00Z" },
+        "notes": "Lunch plan",
+        "items": [
+          {
+            "menu_item_id": "item_001",
+            "name": "Grilled Chicken Bowl",
+            "planned_quantity": 1,
+            "expected_calories": 520
+          },
+          {
+            "menu_item_id": "item_002",
+            "name": "Caesar Salad",
+            "planned_quantity": 1,
+            "expected_calories": 280
+          }
+        ]
+      }
+    ],
+    "consumption_entries": [
+      {
+        "consumption_entry_id": "cons_001",
+        "consumed_at": { "$date": "2026-03-30T12:15:00Z" },
+        "quantity": 1,
+        "snapshot_id": "snapshot_001",
+        "menu_item_id": "item_001",
+        "item_name": "Grilled Chicken Bowl",
+        "calories": 520
+      },
+      {
+        "consumption_entry_id": "cons_002",
+        "consumed_at": { "$date": "2026-03-30T12:20:00Z" },
+        "quantity": 1,
+        "snapshot_id": "snapshot_001",
+        "menu_item_id": "item_002",
+        "item_name": "Caesar Salad",
+        "calories": 280
+      }
+    ]
+  },
+  {
+    "_id": "user_002",
+    "email": "alex.a@northeastern.edu",
+    "display_name": "Alex",
+    "created_at": { "$date": "2026-03-26T09:00:00Z" },
+    "dietary_goals": [
+      {
+        "goal_id": "goal_002",
+        "goal_type": "Calories",
+        "target_value": 1800,
+        "unit": "kcal",
+        "start_date": { "$date": "2026-03-26T00:00:00Z" },
+        "end_date": { "$date": "2026-04-26T00:00:00Z" }
+      }
+    ],
+    "filter_presets": [
+      {
+        "filter_id": "filter_003",
+        "name": "Very Light",
+        "min_calories": 0,
+        "max_calories": 250,
+        "max_serving_size": 1,
+        "enabled": true,
+        "created_at": { "$date": "2026-03-26T09:10:00Z" }
+      }
+    ],
+    "meal_plans": [
+      {
+        "meal_plan_id": "plan_002",
+        "plan_date": { "$date": "2026-03-30T00:00:00Z" },
+        "notes": "Dinner plan",
+        "items": [
+          {
+            "menu_item_id": "item_005",
+            "name": "Brown Rice",
+            "planned_quantity": 1,
+            "expected_calories": 210
+          },
+          {
+            "menu_item_id": "item_006",
+            "name": "Fruit Cup",
+            "planned_quantity": 1,
+            "expected_calories": 120
+          }
+        ]
+      }
+    ],
+    "consumption_entries": [
+      {
+        "consumption_entry_id": "cons_003",
+        "consumed_at": { "$date": "2026-03-30T18:10:00Z" },
+        "quantity": 1,
+        "snapshot_id": "snapshot_002",
+        "menu_item_id": "item_005",
+        "item_name": "Brown Rice",
+        "calories": 210
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+_id,email,display_name,goal_type,target_value,meal_plan_item,planned_quantity,consumed_item,consumed_calories
+user_001,ercan.t@northeastern.edu,Tuna,Calories,2200,Grilled Chicken Bowl,1,Grilled Chicken Bowl,520
+user_001,ercan.t@northeastern.edu,Tuna,Calories,2200,Caesar Salad,1,Caesar Salad,280
+user_002,alex.a@northeastern.edu,Alex,Calories,1800,Brown Rice,1,Brown Rice,210
