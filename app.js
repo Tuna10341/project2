@@ -57,7 +57,7 @@ app.get("/api/menus/:id", async (req, res) => {
 });
 
 app.post("/api/menus", async (req, res) => {
-  const { _id, menu_date, dining_location, meal_period } = req.body;
+  const { _id, menu_date, dining_location, meal_period, items } = req.body;
   if (!_id || !menu_date || !dining_location || !meal_period)
     return res.status(400).json({ error: "Missing fields" });
   await menus.insertOne({
@@ -68,7 +68,7 @@ app.post("/api/menus", async (req, res) => {
     dining_location,
     meal_period,
     source_system: { name: "DineOnCampus" },
-    items: []
+    items: items || []
   });
   res.status(201).json({ message: "Created" });
 });
