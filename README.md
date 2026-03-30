@@ -43,13 +43,36 @@ mongoimport --db campusNutrition --collection users --type csv --headerline --fi
 
 ## Dump and Restore
 
-Create a dump from your loaded database:
+### Using the Provided Dump File
 
+A pre-populated dump file is included in `/dump/campusNutrition/` with test data (6 users and 5 menu snapshots).
+
+**Option 1: Import using mongoimport (Recommended)**
+
+```bash
+mongoimport --db campusNutrition --collection users --file dump/campusNutrition/users.json --jsonArray --upsert
+mongoimport --db campusNutrition --collection menuSnapshots --file dump/campusNutrition/menuSnapshots.json --jsonArray --upsert
+```
+
+**Option 2: Import using MongoDB Compass**
+
+1. Open MongoDB Compass
+2. Connect to localhost:27017
+3. Right-click on campusNutrition database → Add Collection
+4. For `users`: Click Add Data → Import File → Select `dump/campusNutrition/users.json` → Import
+5. For `menuSnapshots`: Click Add Data → Import File → Select `dump/campusNutrition/menuSnapshots.json` → Import
+
+**Option 3: Create your own dump**
+
+```bash
 mongodump --db campusNutrition --out ./dump
+```
 
-Restore from dump:
+**Option 4: Restore from dump**
 
+```bash
 mongorestore --db campusNutrition --drop ./dump/campusNutrition
+```
 
 ## Queries
 

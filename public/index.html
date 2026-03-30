@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Nutrition Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+
+        .tab-button {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover {
+            color: #667eea;
+        }
+
+        .tab-button.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            grid-column: 1 / -1;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        button.delete {
+            background: #e74c3c;
+        }
+
+        button.delete:hover {
+            background: #c0392b;
+        }
+
+        button.secondary {
+            background: #95a5a6;
+        }
+
+        button.secondary:hover {
+            background: #7f8c8d;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #f9f9f9;
+        }
+
+        .data-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table tr:hover {
+            background: #f0f0f0;
+        }
+
+        .data-table .actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .data-table button {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        .message {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal.show {
+            display: block;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .truncate {
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Campus Nutrition Management</h1>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="switchTab('users')">Users</button>
+            <button class="tab-button" onclick="switchTab('menus')">Menu Snapshots</button>
+        </div>
+
+        <!-- USERS TAB -->
+        <div id="users" class="tab-content active">
+            <div id="userMessage" class="message"></div>
+
+            <div class="section">
+                <h2>Create New User</h2>
+                <div class="form-group">
+                    <div>
+                        <label for="userId">User ID *</label>
+                        <input type="text" id="userId" placeholder="e.g., user_003">
+                    </div>
+                    <div>
+                        <label for="userEmail">Email *</label>
+                        <input type="email" id="userEmail" placeholder="e.g., user@example.com">
+                    </div>
+                    <div>
+                        <label for="userDisplayName">Display Name *</label>
+                        <input type="text" id="userDisplayName" placeholder="e.g., John Doe">
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button onclick="createUser()">Create User</button>
+                    <button class="secondary" onclick="clearUserForm()">Clear</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Users List</h2>
+                <button onclick="loadUsers()" class="secondary">Refresh List</button>
+                <div id="usersContainer" style="margin-top: 20px;"></div>
+            </div>
+        </div>
+
+        <!-- MENU SNAPSHOTS TAB -->
+        <div id="menus" class="tab-content">
+            <div id="menuMessage" class="message"></div>
+
+            <div class="section">
+                <h2>Create New Menu Snapshot</h2>
+                <div class="form-group">
+                    <div>
+                        <label for="menuId">Snapshot ID *</label>
+                        <input type="text" id="menuId" placeholder="e.g., snapshot_003">
+                    </div>
+                    <div>
+                        <label for="menuDate">Menu Date *</label>
+                        <input type="date" id="menuDate">
+                    </div>
+                    <div>
+                        <label for="locationName">Dining Location Name *</label>
+                        <input type="text" id="locationName" placeholder="e.g., Stetson East">
+                    </div>
+                    <div>
+                        <label for="mealPeriodName">Meal Period *</label>
+                        <input type="text" id="mealPeriodName" placeholder="e.g., Lunch">
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button onclick="createMenu()">Create Menu</button>
+                    <button class="secondary" onclick="clearMenuForm()">Clear</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Menu Snapshots List</h2>
+                <button onclick="loadMenus()" class="secondary">Refresh List</button>
+                <div id="menusContainer" style="margin-top: 20px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDIT USER MODAL -->
+    <div id="editUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editUserModal')">&times;</span>
+            <h2>Edit User</h2>
+            <div class="form-group" style="margin-top: 20px;">
+                <div>
+                    <label for="editUserId">User ID</label>
+                    <input type="text" id="editUserId" disabled>
+                </div>
+                <div>
+                    <label for="editUserEmail">Email</label>
+                    <input type="email" id="editUserEmail">
+                </div>
+                <div>
+                    <label for="editUserDisplayName">Display Name</label>
+                    <input type="text" id="editUserDisplayName">
+                </div>
+            </div>
+            <div class="button-group" style="margin-top: 20px;">
+                <button onclick="saveUserEdit()">Save Changes</button>
+                <button class="secondary" onclick="closeModal('editUserModal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EDIT MENU MODAL -->
+    <div id="editMenuModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editMenuModal')">&times;</span>
+            <h2>Edit Menu Snapshot</h2>
+            <div class="form-group" style="margin-top: 20px;">
+                <div>
+                    <label for="editMenuId">Snapshot ID</label>
+                    <input type="text" id="editMenuId" disabled>
+                </div>
+                <div>
+                    <label for="editMenuDate">Menu Date</label>
+                    <input type="date" id="editMenuDate">
+                </div>
+                <div>
+                    <label for="editLocationName">Dining Location Name</label>
+                    <input type="text" id="editLocationName">
+                </div>
+                <div>
+                    <label for="editMealPeriodName">Meal Period</label>
+                    <input type="text" id="editMealPeriodName">
+                </div>
+                <div>
+                    <label for="editIsComplete">
+                        <input type="checkbox" id="editIsComplete"> Menu is Complete
+                    </label>
+                </div>
+            </div>
+            <div class="button-group" style="margin-top: 20px;">
+                <button onclick="saveMenuEdit()">Save Changes</button>
+                <button class="secondary" onclick="closeModal('editMenuModal')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = '/api';
+        let currentEditingUserId = null;
+        let currentEditingMenuId = null;
+
+        // Tab switching
+        function switchTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+
+            if (tabName === 'users') {
+                loadUsers();
+            } else {
+                loadMenus();
+            }
+        }
+
+        // Modal functions
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+        }
+
+        function showMessage(message, type, tabName) {
+            const messageId = tabName === 'users' ? 'userMessage' : 'menuMessage';
+            const element = document.getElementById(messageId);
+            element.textContent = message;
+            element.className = `message ${type}`;
+            setTimeout(() => {
+                element.className = 'message';
+            }, 3000);
+        }
+
+        // ========== USERS FUNCTIONS ==========
+
+        async function createUser() {
+            const id = document.getElementById('userId').value;
+            const email = document.getElementById('userEmail').value;
+            const displayName = document.getElementById('userDisplayName').value;
+
+            if (!id || !email || !displayName) {
+                showMessage('Please fill all required fields', 'error', 'users');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/users`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ _id: id, email, display_name: displayName })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error);
+                }
+
+                showMessage('User created successfully!', 'success', 'users');
+                clearUserForm();
+                loadUsers();
+            } catch (error) {
+                showMessage(`Error: ${error.message}`, 'error', 'users');
+            }
+        }
+
+        async function loadUsers() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/users`);
+                const users = await response.json();
+
+                if (users.length === 0) {
+                    document.getElementById('usersContainer').innerHTML = '<div class="empty-message">No users found</div>';
+                    return;
+                }
+
+                let html = '<table class="data-table"><thead><tr><th>ID</th><th>Email</th><th>Display Name</th><th>Created At</th><th>Actions</th></tr></thead><tbody>';
+                users.forEach(user => {
+                    const createdAt = new Date(user.created_at).toLocaleDateString();
+                    html += `<tr>
+                        <td>${user._id}</td>
+                        <td>${user.email}</td>
+                        <td>${user.display_name}</td>
+                        <td>${createdAt}</td>
+                        <td class="actions">
+                            <button onclick="editUser('${user._id}')">Edit</button>
+                            <button class="delete" onclick="deleteUser('${user._id}')">Delete</button>
+                        </td>
+                    </tr>`;
+                });
+                html += '</tbody></table>';
+                document.getElementById('usersContainer').innerHTML = html;
+            } catch (error) {
+                showMessage(`Error loading users: ${error.message}`, 'error', 'users');
+            }
+        }
+
+        function editUser(userId) {
+            currentEditingUserId = userId;
+            const modal = document.getElementById('editUserModal');
+            
+            fetch(`${API_BASE_URL}/users/${userId}`)
+                .then(res => res.json())
+                .then(user => {
+                    document.getElementById('editUserId').value = user._id;
+                    document.getElementById('editUserEmail').value = user.email;
+                    document.getElementById('editUserDisplayName').value = user.display_name;
+                    modal.classList.add('show');
+                });
+        }
+
+        async function saveUserEdit() {
+            const email = document.getElementById('editUserEmail').value;
+            const displayName = document.getElementById('editUserDisplayName').value;
+
+            if (!email || !displayName) {
+                showMessage('Please fill all fields', 'error', 'users');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/users/${currentEditingUserId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email,
+                        display_name: displayName
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error);
+                }
+
+                showMessage('User updated successfully!', 'success', 'users');
+                closeModal('editUserModal');
+                loadUsers();
+            } catch (error) {
+                showMessage(`Error: ${error.message}`, 'error', 'users');
+            }
+        }
+
+        async function deleteUser(userId) {
+            if (!confirm('Are you sure you want to delete this user?')) return;
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/users/${userId}`, {
+                    method: 'DELETE'
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error);
+                }
+
+                showMessage('User deleted successfully!', 'success', 'users');
+                loadUsers();
+            } catch (error) {
+                showMessage(`Error: ${error.message}`, 'error', 'users');
+            }
+        }
+
+        function clearUserForm() {
+            document.getElementById('userId').value = '';
+            document.getElementById('userEmail').value = '';
+            document.getElementById('userDisplayName').value = '';
+        }
+
+        // ========== MENU FUNCTIONS ==========
+
+        async function createMenu() {
+            const id = document.getElementById('menuId').value;
+            const menuDate = document.getElementById('menuDate').value;
+            const locationName = document.getElementById('locationName').value;
+            const mealPeriodName = document.getElementById('mealPeriodName').value;
+
+            if (!id || !menuDate || !locationName || !mealPeriodName) {
+                showMessage('Please fill all required fields', 'error', 'menus');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/menus`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        _id: id,
+                        menu_date: menuDate,
+                        dining_location: {
+                            location_id: 'loc_001',
+                            name: locationName,
+                            campus: 'Boston',
+                            is_active: true
+                        },
+                        meal_period: {
+                            meal_period_id: 'mp_001',
+                            name: mealPeriodName,
+                            start_time: '11:00',
+                            end_time: '15:00'
+                        }
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error);
+                }
+
+                showMessage('Menu snapshot created successfully!', 'success', 'menus');
+                clearMenuForm();
+                loadMenus();
+            } catch (error) {
+                showMessage(`Error: ${error.message}`, 'error', 'menus');
+            }
+        }
+
+        async function loadMenus() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/menus`);
+                const menus = await response.json();
+
+                if (menus.length === 0) {
+                    document.getElementById('menusContainer').innerHTML = '<div class="empty-message">No menu snapshots found</div>';
+                    return;
+                }
+
+                let html = '<table class="data-table"><thead><tr><th>ID</th><th>Menu Date</th><th>Dining Location</th><th>Meal Period</th><th>Items</th><th>Actions</th></tr></thead><tbody>';
+                menus.forEach(menu => {
+                    const menuDate = new Date(menu.menu_date).toLocaleDateString();
+                    const itemCount = menu.items ? menu.items.length : 0;
+                    html += `<tr>
+                        <td>${menu._id}</td>
+                        <td>${menuDate}</td>
+                        <td>${menu.dining_location.name}</td>
+                        <td>${menu.meal_period.name}</td>
+                        <td>${itemCount}</td>
+                        <td class="actions">
+                            <button onclick="editMenu('${menu._id}')">Edit</button>
+                            <button class="delete" onclick="deleteMenu('${menu._id}')">Delete</button>
+                        </td>
+                    </tr>`;
+                });
+                html += '</tbody></table>';
+                document.getElementById('menusContainer').innerHTML = html;
+            } catch (error) {
+                showMessage(`Error loading menus: ${error.message}`, 'error', 'menus');
+            }
+        }
+
+        function editMenu(menuId) {
+            currentEditingMenuId = menuId;
+            const modal = document.getElementById('editMenuModal');
+            
+            fetch(`${API_BASE_URL}/menus/${menuId}`)
+                .then(res => res.json())
+                .then(menu => {
+                    document.getElementById('editMenuId').value = menu._id;
+                    document.getElementById('editMenuDate').value = new Date(menu.menu_date).toISOString().split('T')[0];
+                    document.getElementById('editLocationName').value = menu.dining_location.name;
+                    document.getElementById('editMealPeriodName').value = menu.meal_period.name;
+                    document.getElementById('editIsComplete').checked = menu.is_complete;
+                    modal.classList.add('show');
+                });
+        }
+
+        async function saveMenuEdit() {
+            const menuDate = document.getElementById('editMenuDate').value;
+            const locationName = document.getElementById('editLocationName').value;
+            const mealPeriodName = document.getElementById('editMealPeriodName').value;
+            const isComplete = document.getElementById('editIsComplete').checked;
+
+            if (!menuDate || !locationName || !mealPeriodName) {
+                showMessage('Please fill all fields', 'error', 'menus');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/menus/${currentEditingMenuId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        menu_date: menuDate,
+                        dining_location: {
+                            location_id: 'loc_001',
+                            name: locationName,
+                            campus: 'Boston',
+                            is_active: true
+                        },
+                        meal_period: {
+                            meal_period_id: 'mp_001',
+                            name: mealPeriodName,
+                            start_time: '11:00',
+                            end_time: '15:00'
+                        },
+                        is_complete: isComplete
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error);
+                }
+
+                showMessage('Menu snapshot updated successfully!', 'success', 'menus');
+                closeModal('editMenuModal');
+                loadMenus();
+            } catch (error) {
+                showMessage(`Error: ${error.message}`, 'error', 'menus');
+            }
+        }
+
+        async function deleteMenu(menuId) {
+            if (!confirm('Are you sure you want to delete this menu snapshot?')) return;
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/menus/${menuId}`, {
+                    method: 'DELETE'
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error);
+                }
+
+                showMessage('Menu snapshot deleted successfully!', 'success', 'menus');
+                loadMenus();
+            } catch (error) {
+                showMessage(`Error: ${error.message}`, 'error', 'menus');
+            }
+        }
+
+        function clearMenuForm() {
+            document.getElementById('menuId').value = '';
+            document.getElementById('menuDate').value = '';
+            document.getElementById('locationName').value = '';
+            document.getElementById('mealPeriodName').value = '';
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadUsers();
+        });
+    </script>
+</body>
+</html>

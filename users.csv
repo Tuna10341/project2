@@ -1,4 +1,22 @@
 _id,email,display_name,goal_type,target_value,meal_plan_item,planned_quantity,consumed_item,consumed_calories
 user_001,tuna.t@northeastern.edu,Tuna,Calories,2200,Grilled Chicken Bowl,1,Grilled Chicken Bowl,520
 user_001,tuna.t@northeastern.edu,Tuna,Calories,2200,Caesar Salad,1,Caesar Salad,280
+user_001,tuna.t@northeastern.edu,Tuna,Calories,2200,Veggie Pasta,1,Veggie Pasta,430
+user_001,tuna.t@northeastern.edu,Tuna,Calories,2200,Salmon Fillet,1,Salmon Fillet,540
+user_001,tuna.t@northeastern.edu,Tuna,Calories,2200,Steamed Broccoli,1,Steamed Broccoli,90
 user_002,alex.a@northeastern.edu,Alex,Calories,1800,Brown Rice,1,Brown Rice,210
+user_002,alex.a@northeastern.edu,Alex,Calories,1800,Fruit Cup,1,Fruit Cup,120
+user_002,alex.a@northeastern.edu,Alex,Calories,1800,Garden Salad,1,Garden Salad,140
+user_002,alex.a@northeastern.edu,Alex,Calories,1800,Miso Soup,1,Miso Soup,80
+user_003,maya.r@northeastern.edu,Maya,Calories,2000,Turkey Sandwich,1,Turkey Sandwich,480
+user_003,maya.r@northeastern.edu,Maya,Calories,2000,Tomato Soup,1,Tomato Soup,160
+user_003,maya.r@northeastern.edu,Maya,Calories,2000,Oatmeal,1,Oatmeal,180
+user_003,maya.r@northeastern.edu,Maya,Calories,2000,Blueberry Muffin,1,Blueberry Muffin,340
+user_004,james.k@northeastern.edu,James,Calories,2500,BBQ Pulled Pork,1,BBQ Pulled Pork,590
+user_004,james.k@northeastern.edu,James,Calories,2500,Mashed Potatoes,1,Mashed Potatoes,260
+user_004,james.k@northeastern.edu,James,Calories,2500,Dinner Roll,1,Dinner Roll,150
+user_004,james.k@northeastern.edu,James,Calories,2500,Pancakes,1,Pancakes,370
+user_005,sara.m@northeastern.edu,Sara,Calories,1600,Tofu Stir Fry,1,Tofu Stir Fry,390
+user_005,sara.m@northeastern.edu,Sara,Calories,1600,Jasmine Rice,1,Jasmine Rice,200
+user_005,sara.m@northeastern.edu,Sara,Calories,1600,Garden Salad,1,Garden Salad,140
+user_005,sara.m@northeastern.edu,Sara,Calories,1600,Apple Juice,1,Apple Juice,120

@@ -5,3 +5,26 @@ snapshot_001,2026-03-30,2026-03-30T08:00:00Z,Stetson East,Boston,Lunch,Veggie Pa
 snapshot_002,2026-03-30,2026-03-30T17:00:00Z,International Village,Boston,Dinner,Beef Stir Fry,Entree,610,plate
 snapshot_002,2026-03-30,2026-03-30T17:00:00Z,International Village,Boston,Dinner,Brown Rice,Side,210,cup
 snapshot_002,2026-03-30,2026-03-30T17:00:00Z,International Village,Boston,Dinner,Fruit Cup,Dessert,120,cup
+snapshot_003,2026-03-31,2026-03-31T08:00:00Z,Stetson East,Boston,Breakfast,Scrambled Eggs,Entree,210,plate
+snapshot_003,2026-03-31,2026-03-31T08:00:00Z,Stetson East,Boston,Breakfast,Oatmeal,Side,180,bowl
+snapshot_003,2026-03-31,2026-03-31T08:00:00Z,Stetson East,Boston,Breakfast,Orange Juice,Beverage,110,cup
+snapshot_003,2026-03-31,2026-03-31T08:00:00Z,Stetson East,Boston,Breakfast,Blueberry Muffin,Dessert,340,piece
+snapshot_004,2026-03-31,2026-03-31T11:00:00Z,International Village,Boston,Lunch,Turkey Sandwich,Entree,480,sandwich
+snapshot_004,2026-03-31,2026-03-31T11:00:00Z,International Village,Boston,Lunch,Tomato Soup,Side,160,cup
+snapshot_004,2026-03-31,2026-03-31T11:00:00Z,International Village,Boston,Lunch,Garden Salad,Salad,140,plate
+snapshot_004,2026-03-31,2026-03-31T11:00:00Z,International Village,Boston,Lunch,Chocolate Pudding,Dessert,230,cup
+snapshot_005,2026-03-31,2026-03-31T17:00:00Z,Stetson East,Boston,Dinner,Salmon Fillet,Entree,540,plate
+snapshot_005,2026-03-31,2026-03-31T17:00:00Z,Stetson East,Boston,Dinner,Mashed Potatoes,Side,260,bowl
+snapshot_005,2026-03-31,2026-03-31T17:00:00Z,Stetson East,Boston,Dinner,Steamed Broccoli,Vegetarian,90,bowl
+snapshot_005,2026-03-31,2026-03-31T17:00:00Z,Stetson East,Boston,Dinner,Dinner Roll,Side,150,piece
+snapshot_006,2026-04-01,2026-04-01T08:00:00Z,International Village,Boston,Breakfast,Pancakes,Entree,370,plate
+snapshot_006,2026-04-01,2026-04-01T08:00:00Z,International Village,Boston,Breakfast,Bacon Strip,Side,180,piece
+snapshot_006,2026-04-01,2026-04-01T08:00:00Z,International Village,Boston,Breakfast,Apple Juice,Beverage,120,cup
+snapshot_007,2026-04-01,2026-04-01T11:00:00Z,Stetson East,Boston,Lunch,BBQ Pulled Pork,Entree,590,bowl
+snapshot_007,2026-04-01,2026-04-01T11:00:00Z,Stetson East,Boston,Lunch,Coleslaw,Salad,180,cup
+snapshot_007,2026-04-01,2026-04-01T11:00:00Z,Stetson East,Boston,Lunch,Corn on the Cob,Vegetarian,130,piece
+snapshot_007,2026-04-01,2026-04-01T11:00:00Z,Stetson East,Boston,Lunch,Lemonade,Beverage,140,cup
+snapshot_008,2026-04-01,2026-04-01T17:00:00Z,International Village,Boston,Dinner,Tofu Stir Fry,Vegetarian,390,bowl
+snapshot_008,2026-04-01,2026-04-01T17:00:00Z,International Village,Boston,Dinner,Jasmine Rice,Side,200,cup
+snapshot_008,2026-04-01,2026-04-01T17:00:00Z,International Village,Boston,Dinner,Miso Soup,Side,80,cup
+snapshot_008,2026-04-01,2026-04-01T17:00:00Z,International Village,Boston,Dinner,Green Tea Ice Cream,Dessert,210,cup
