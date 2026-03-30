@@ -1,0 +1,71 @@
+[
+  {
+    "_id": "snapshot_001",
+    "menu_date": {"$date": "2026-03-30T00:00:00Z"},
+    "fetched_at": {"$date": "2026-03-30T08:00:00Z"},
+    "source_reference": "DOC_001",
+    "is_complete": true,
+    "dining_location": {"location_id": "loc_001", "name": "Stetson East", "campus": "Boston", "is_active": true},
+    "meal_period": {"meal_period_id": "mp_001", "name": "Lunch", "start_time": "11:00", "end_time": "15:00"},
+    "source_system": {"source_system_id": "src_001", "name": "DineOnCampus"},
+    "items": [
+      {"menu_item_id": "item_001", "name": "Grilled Chicken Bowl", "category": {"category_id": "cat_001", "category_name": "Entree"}, "allergen_tags": ["soy"], "nutrition": {"calories": 520}},
+      {"menu_item_id": "item_002", "name": "Caesar Salad", "category": {"category_id": "cat_002", "category_name": "Salad"}, "allergen_tags": ["milk"], "nutrition": {"calories": 280}}
+    ]
+  },
+  {
+    "_id": "snapshot_002",
+    "menu_date": {"$date": "2026-03-30T00:00:00Z"},
+    "fetched_at": {"$date": "2026-03-30T17:00:00Z"},
+    "source_reference": "DOC_002",
+    "is_complete": true,
+    "dining_location": {"location_id": "loc_002", "name": "Stetson West", "campus": "Boston", "is_active": true},
+    "meal_period": {"meal_period_id": "mp_002", "name": "Dinner", "start_time": "17:00", "end_time": "21:00"},
+    "source_system": {"source_system_id": "src_001", "name": "DineOnCampus"},
+    "items": [
+      {"menu_item_id": "item_003", "name": "Vegetarian Pasta", "category": {"category_id": "cat_003", "category_name": "Vegetarian"}, "allergen_tags": ["wheat"], "nutrition": {"calories": 430}},
+      {"menu_item_id": "item_004", "name": "Grilled Fish", "category": {"category_id": "cat_004", "category_name": "Seafood"}, "allergen_tags": ["fish"], "nutrition": {"calories": 380}}
+    ]
+  },
+  {
+    "_id": "snapshot_003",
+    "menu_date": {"$date": "2026-03-31T00:00:00Z"},
+    "fetched_at": {"$date": "2026-03-31T07:30:00Z"},
+    "source_reference": "DOC_003",
+    "is_complete": true,
+    "dining_location": {"location_id": "loc_003", "name": "Marino Center", "campus": "Boston", "is_active": true},
+    "meal_period": {"meal_period_id": "mp_003", "name": "Breakfast", "start_time": "07:00", "end_time": "11:00"},
+    "source_system": {"source_system_id": "src_001", "name": "DineOnCampus"},
+    "items": [
+      {"menu_item_id": "item_005", "name": "Pancakes with Syrup", "category": {"category_id": "cat_005", "category_name": "Breakfast"}, "allergen_tags": ["wheat"], "nutrition": {"calories": 350}},
+      {"menu_item_id": "item_006", "name": "Scrambled Eggs", "category": {"category_id": "cat_005", "category_name": "Breakfast"}, "allergen_tags": ["eggs"], "nutrition": {"calories": 180}}
+    ]
+  },
+  {
+    "_id": "snapshot_004",
+    "menu_date": {"$date": "2026-03-31T00:00:00Z"},
+    "fetched_at": {"$date": "2026-03-31T12:00:00Z"},
+    "source_reference": "DOC_004",
+    "is_complete": true,
+    "dining_location": {"location_id": "loc_001", "name": "Stetson East", "campus": "Boston", "is_active": true},
+    "meal_period": {"meal_period_id": "mp_001", "name": "Lunch", "start_time": "11:30", "end_time": "14:30"},
+    "source_system": {"source_system_id": "src_001", "name": "DineOnCampus"},
+    "items": [
+      {"menu_item_id": "item_007", "name": "Turkey Sandwich", "category": {"category_id": "cat_006", "category_name": "Sandwich"}, "allergen_tags": ["wheat"], "nutrition": {"calories": 420}},
+      {"menu_item_id": "item_008", "name": "Vegetable Stir Fry", "category": {"category_id": "cat_003", "category_name": "Vegetarian"}, "allergen_tags": ["soy"], "nutrition": {"calories": 250}}
+    ]
+  },
+  {
+    "_id": "snapshot_005",
+    "menu_date": {"$date": "2026-04-01T00:00:00Z"},
+    "fetched_at": {"$date": "2026-04-01T08:15:00Z"},
+    "source_reference": "DOC_005",
+    "is_complete": true,
+    "dining_location": {"location_id": "loc_002", "name": "Stetson West", "campus": "Boston", "is_active": true},
+    "meal_period": {"meal_period_id": "mp_003", "name": "Breakfast", "start_time": "07:00", "end_time": "11:00"},
+    "source_system": {"source_system_id": "src_001", "name": "DineOnCampus"},
+    "items": [
+      {"menu_item_id": "item_009", "name": "Oatmeal with Berries", "category": {"category_id": "cat_005", "category_name": "Breakfast"}, "allergen_tags": ["gluten"], "nutrition": {"calories": 220}}
+    ]
+  }
+]

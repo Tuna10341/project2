@@ -1,0 +1,56 @@
+[
+  {
+    "_id": "user_001",
+    "email": "tuna.t@northeastern.edu",
+    "display_name": "Tuna T",
+    "created_at": {"$date": "2026-03-25T10:00:00Z"},
+    "dietary_goals": [{"goal_id": "goal_001", "goal_type": "Calories", "target_value": 2200, "unit": "kcal"}],
+    "filter_presets": [],
+    "meal_plans": []
+  },
+  {
+    "_id": "user_002",
+    "email": "alex.chen@northeastern.edu",
+    "display_name": "Alex Chen",
+    "created_at": {"$date": "2026-03-26T08:30:00Z"},
+    "dietary_goals": [{"goal_id": "goal_002", "goal_type": "Protein", "target_value": 150, "unit": "grams"}],
+    "filter_presets": [],
+    "meal_plans": []
+  },
+  {
+    "_id": "user_003",
+    "email": "sarah.kim@northeastern.edu",
+    "display_name": "Sarah Kim",
+    "created_at": {"$date": "2026-03-27T14:20:00Z"},
+    "dietary_goals": [{"goal_id": "goal_003", "goal_type": "Weight Loss", "target_value": 1800, "unit": "kcal"}],
+    "filter_presets": [],
+    "meal_plans": []
+  },
+  {
+    "_id": "user_004",
+    "email": "james.rodriguez@northeastern.edu",
+    "display_name": "James Rodriguez",
+    "created_at": {"$date": "2026-03-28T09:15:00Z"},
+    "dietary_goals": [{"goal_id": "goal_004", "goal_type": "Muscle Gain", "target_value": 3000, "unit": "kcal"}],
+    "filter_presets": [],
+    "meal_plans": []
+  },
+  {
+    "_id": "user_005",
+    "email": "emma.watson@northeastern.edu",
+    "display_name": "Emma Watson",
+    "created_at": {"$date": "2026-03-29T11:00:00Z"},
+    "dietary_goals": [{"goal_id": "goal_005", "goal_type": "Balanced Diet", "target_value": 2000, "unit": "kcal"}],
+    "filter_presets": [],
+    "meal_plans": []
+  },
+  {
+    "_id": "user_006",
+    "email": "michael.johnson@northeastern.edu",
+    "display_name": "Michael Johnson",
+    "created_at": {"$date": "2026-03-30T07:45:00Z"},
+    "dietary_goals": [{"goal_id": "goal_006", "goal_type": "Maintenance", "target_value": 2400, "unit": "kcal"}],
+    "filter_presets": [],
+    "meal_plans": []
+  }
+]
