@@ -2,55 +2,273 @@
   {
     "_id": "user_001",
     "email": "tuna.t@northeastern.edu",
-    "display_name": "Tuna T",
-    "created_at": {"$date": "2026-03-25T10:00:00Z"},
-    "dietary_goals": [{"goal_id": "goal_001", "goal_type": "Calories", "target_value": 2200, "unit": "kcal"}],
-    "filter_presets": [],
-    "meal_plans": []
+    "display_name": "Tuna",
+    "created_at": { "$date": "2026-03-25T10:00:00Z" },
+    "dietary_goals": [
+      {
+        "goal_id": "goal_001",
+        "goal_type": "Calories",
+        "target_value": 2200,
+        "unit": "kcal",
+        "start_date": { "$date": "2026-03-25T00:00:00Z" },
+        "end_date": { "$date": "2026-04-25T00:00:00Z" }
+      }
+    ],
+    "filter_presets": [
+      {
+        "filter_id": "filter_001",
+        "name": "Low Calorie",
+        "min_calories": 0,
+        "max_calories": 400,
+        "max_serving_size": 1,
+        "enabled": true,
+        "created_at": { "$date": "2026-03-25T10:10:00Z" }
+      },
+      {
+        "filter_id": "filter_002",
+        "name": "High Protein",
+        "min_calories": 300,
+        "max_calories": 700,
+        "max_serving_size": 1,
+        "enabled": false,
+        "created_at": { "$date": "2026-03-25T10:15:00Z" }
+      }
+    ],
+    "meal_plans": [
+      {
+        "meal_plan_id": "plan_001",
+        "plan_date": { "$date": "2026-03-30T00:00:00Z" },
+        "notes": "Lunch plan",
+        "items": [
+          { "menu_item_id": "item_001", "name": "Grilled Chicken Bowl", "planned_quantity": 1, "expected_calories": 520 },
+          { "menu_item_id": "item_002", "name": "Caesar Salad", "planned_quantity": 1, "expected_calories": 280 }
+        ]
+      }
+    ],
+    "consumption_entries": [
+      {
+        "consumption_entry_id": "cons_001",
+        "consumed_at": { "$date": "2026-03-30T12:15:00Z" },
+        "quantity": 1,
+        "snapshot_id": "snapshot_001",
+        "menu_item_id": "item_001",
+        "item_name": "Grilled Chicken Bowl",
+        "calories": 520
+      },
+      {
+        "consumption_entry_id": "cons_002",
+        "consumed_at": { "$date": "2026-03-30T12:20:00Z" },
+        "quantity": 1,
+        "snapshot_id": "snapshot_001",
+        "menu_item_id": "item_002",
+        "item_name": "Caesar Salad",
+        "calories": 280
+      }
+    ]
   },
   {
     "_id": "user_002",
-    "email": "alex.chen@northeastern.edu",
-    "display_name": "Alex Chen",
-    "created_at": {"$date": "2026-03-26T08:30:00Z"},
-    "dietary_goals": [{"goal_id": "goal_002", "goal_type": "Protein", "target_value": 150, "unit": "grams"}],
-    "filter_presets": [],
-    "meal_plans": []
+    "email": "alex.a@northeastern.edu",
+    "display_name": "Alex",
+    "created_at": { "$date": "2026-03-26T09:00:00Z" },
+    "dietary_goals": [
+      {
+        "goal_id": "goal_002",
+        "goal_type": "Calories",
+        "target_value": 1800,
+        "unit": "kcal",
+        "start_date": { "$date": "2026-03-26T00:00:00Z" },
+        "end_date": { "$date": "2026-04-26T00:00:00Z" }
+      }
+    ],
+    "filter_presets": [
+      {
+        "filter_id": "filter_003",
+        "name": "Very Light",
+        "min_calories": 0,
+        "max_calories": 250,
+        "max_serving_size": 1,
+        "enabled": true,
+        "created_at": { "$date": "2026-03-26T09:10:00Z" }
+      }
+    ],
+    "meal_plans": [
+      {
+        "meal_plan_id": "plan_002",
+        "plan_date": { "$date": "2026-03-30T00:00:00Z" },
+        "notes": "Dinner plan",
+        "items": [
+          { "menu_item_id": "item_005", "name": "Brown Rice", "planned_quantity": 1, "expected_calories": 210 },
+          { "menu_item_id": "item_006", "name": "Fruit Cup", "planned_quantity": 1, "expected_calories": 120 }
+        ]
+      }
+    ],
+    "consumption_entries": [
+      {
+        "consumption_entry_id": "cons_003",
+        "consumed_at": { "$date": "2026-03-30T18:10:00Z" },
+        "quantity": 1,
+        "snapshot_id": "snapshot_002",
+        "menu_item_id": "item_005",
+        "item_name": "Brown Rice",
+        "calories": 210
+      }
+    ]
   },
   {
     "_id": "user_003",
-    "email": "sarah.kim@northeastern.edu",
-    "display_name": "Sarah Kim",
-    "created_at": {"$date": "2026-03-27T14:20:00Z"},
-    "dietary_goals": [{"goal_id": "goal_003", "goal_type": "Weight Loss", "target_value": 1800, "unit": "kcal"}],
-    "filter_presets": [],
-    "meal_plans": []
+    "email": "maya.r@northeastern.edu",
+    "display_name": "Maya",
+    "created_at": { "$date": "2026-03-27T11:00:00Z" },
+    "dietary_goals": [
+      {
+        "goal_id": "goal_003",
+        "goal_type": "Calories",
+        "target_value": 2000,
+        "unit": "kcal",
+        "start_date": { "$date": "2026-03-27T00:00:00Z" },
+        "end_date": { "$date": "2026-04-27T00:00:00Z" }
+      }
+    ],
+    "filter_presets": [
+      {
+        "filter_id": "filter_004",
+        "name": "Vegetarian Only",
+        "min_calories": 0,
+        "max_calories": 600,
+        "max_serving_size": 1,
+        "enabled": true,
+        "created_at": { "$date": "2026-03-27T11:05:00Z" }
+      }
+    ],
+    "meal_plans": [
+      {
+        "meal_plan_id": "plan_003",
+        "plan_date": { "$date": "2026-03-31T00:00:00Z" },
+        "notes": "Lunch plan",
+        "items": [
+          { "menu_item_id": "item_007", "name": "Turkey Sandwich", "planned_quantity": 1, "expected_calories": 480 },
+          { "menu_item_id": "item_008", "name": "Tomato Soup", "planned_quantity": 1, "expected_calories": 160 }
+        ]
+      }
+    ],
+    "consumption_entries": [
+      {
+        "consumption_entry_id": "cons_004",
+        "consumed_at": { "$date": "2026-03-31T12:30:00Z" },
+        "quantity": 1,
+        "snapshot_id": "snapshot_004",
+        "menu_item_id": "item_007",
+        "item_name": "Turkey Sandwich",
+        "calories": 480
+      }
+    ]
   },
   {
     "_id": "user_004",
-    "email": "james.rodriguez@northeastern.edu",
-    "display_name": "James Rodriguez",
-    "created_at": {"$date": "2026-03-28T09:15:00Z"},
-    "dietary_goals": [{"goal_id": "goal_004", "goal_type": "Muscle Gain", "target_value": 3000, "unit": "kcal"}],
-    "filter_presets": [],
-    "meal_plans": []
+    "email": "james.k@northeastern.edu",
+    "display_name": "James",
+    "created_at": { "$date": "2026-03-28T08:00:00Z" },
+    "dietary_goals": [
+      {
+        "goal_id": "goal_004",
+        "goal_type": "Calories",
+        "target_value": 2500,
+        "unit": "kcal",
+        "start_date": { "$date": "2026-03-28T00:00:00Z" },
+        "end_date": { "$date": "2026-04-28T00:00:00Z" }
+      }
+    ],
+    "filter_presets": [
+      {
+        "filter_id": "filter_005",
+        "name": "High Calorie",
+        "min_calories": 400,
+        "max_calories": 800,
+        "max_serving_size": 2,
+        "enabled": true,
+        "created_at": { "$date": "2026-03-28T08:10:00Z" }
+      }
+    ],
+    "meal_plans": [
+      {
+        "meal_plan_id": "plan_004",
+        "plan_date": { "$date": "2026-03-31T00:00:00Z" },
+        "notes": "Dinner plan",
+        "items": [
+          { "menu_item_id": "item_004", "name": "Beef Stir Fry", "planned_quantity": 1, "expected_calories": 610 },
+          { "menu_item_id": "item_005", "name": "Brown Rice", "planned_quantity": 1, "expected_calories": 210 }
+        ]
+      }
+    ],
+    "consumption_entries": [
+      {
+        "consumption_entry_id": "cons_005",
+        "consumed_at": { "$date": "2026-03-31T18:00:00Z" },
+        "quantity": 1,
+        "snapshot_id": "snapshot_002",
+        "menu_item_id": "item_004",
+        "item_name": "Beef Stir Fry",
+        "calories": 610
+      },
+      {
+        "consumption_entry_id": "cons_006",
+        "consumed_at": { "$date": "2026-03-31T18:05:00Z" },
+        "quantity": 1,
+        "snapshot_id": "snapshot_002",
+        "menu_item_id": "item_005",
+        "item_name": "Brown Rice",
+        "calories": 210
+      }
+    ]
   },
   {
     "_id": "user_005",
-    "email": "emma.watson@northeastern.edu",
-    "display_name": "Emma Watson",
-    "created_at": {"$date": "2026-03-29T11:00:00Z"},
-    "dietary_goals": [{"goal_id": "goal_005", "goal_type": "Balanced Diet", "target_value": 2000, "unit": "kcal"}],
-    "filter_presets": [],
-    "meal_plans": []
-  },
-  {
-    "_id": "user_006",
-    "email": "michael.johnson@northeastern.edu",
-    "display_name": "Michael Johnson",
-    "created_at": {"$date": "2026-03-30T07:45:00Z"},
-    "dietary_goals": [{"goal_id": "goal_006", "goal_type": "Maintenance", "target_value": 2400, "unit": "kcal"}],
-    "filter_presets": [],
-    "meal_plans": []
+    "email": "sara.m@northeastern.edu",
+    "display_name": "Sara",
+    "created_at": { "$date": "2026-03-29T10:00:00Z" },
+    "dietary_goals": [
+      {
+        "goal_id": "goal_005",
+        "goal_type": "Calories",
+        "target_value": 1600,
+        "unit": "kcal",
+        "start_date": { "$date": "2026-03-29T00:00:00Z" },
+        "end_date": { "$date": "2026-04-29T00:00:00Z" }
+      }
+    ],
+    "filter_presets": [
+      {
+        "filter_id": "filter_006",
+        "name": "Light Meals",
+        "min_calories": 0,
+        "max_calories": 300,
+        "max_serving_size": 1,
+        "enabled": true,
+        "created_at": { "$date": "2026-03-29T10:05:00Z" }
+      }
+    ],
+    "meal_plans": [
+      {
+        "meal_plan_id": "plan_005",
+        "plan_date": { "$date": "2026-03-30T00:00:00Z" },
+        "notes": "Light dinner",
+        "items": [
+          { "menu_item_id": "item_006", "name": "Fruit Cup", "planned_quantity": 1, "expected_calories": 120 },
+          { "menu_item_id": "item_005", "name": "Brown Rice", "planned_quantity": 1, "expected_calories": 210 }
+        ]
+      }
+    ],
+    "consumption_entries": [
+      {
+        "consumption_entry_id": "cons_007",
+        "consumed_at": { "$date": "2026-03-30T19:00:00Z" },
+        "quantity": 1,
+        "snapshot_id": "snapshot_002",
+        "menu_item_id": "item_006",
+        "item_name": "Fruit Cup",
+        "calories": 120
+      }
+    ]
   }
 ]
