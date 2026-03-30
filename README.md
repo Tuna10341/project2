@@ -6,6 +6,7 @@ This project models a campus dining nutrition system using MongoDB. It stores me
 ## Collections
 - users
 - menuSnapshots
+Link for ERD LucidChart:https://lucid.app/lucidchart/9ebd0c1f-d7f3-420a-a49f-7cb24dadc9d7/edit?viewport_loc=2091%2C-3355%2C3259%2C1478%2C0_0&invitationId=inv_66bee794-734e-433f-9490-70e7b85bd004
 
 ## Setup
 
